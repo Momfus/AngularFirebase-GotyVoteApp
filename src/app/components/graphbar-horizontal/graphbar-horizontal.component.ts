@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-graphbar-horizontal',
@@ -7,25 +7,7 @@ import { Component, OnDestroy } from '@angular/core';
 })
 export class GraphbarHorizontalComponent {
 
-  results: any[] = [
-    {
-      "name": "Game 1",
-      "value": 20
-    },
-    {
-      "name": "Game 2",
-      "value": 15
-    },
-    {
-      "name": "Game 3",
-      "value": 12
-    },
-    {
-      "name": "Game 4",
-      "value": 22
-    }
-  ];
-
+  @Input() results: any[] = [];
 
   // options
   showXAxis = true;
