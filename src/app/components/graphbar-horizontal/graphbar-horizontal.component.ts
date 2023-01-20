@@ -5,7 +5,7 @@ import { Component, OnDestroy } from '@angular/core';
   templateUrl: './graphbar-horizontal.component.html',
   styleUrls: ['./graphbar-horizontal.component.css']
 })
-export class GraphbarHorizontalComponent implements OnDestroy{
+export class GraphbarHorizontalComponent {
 
   results: any[] = [
     {
@@ -38,32 +38,12 @@ export class GraphbarHorizontalComponent implements OnDestroy{
   yAxisLabel = 'Votes';
   colorScheme = 'nightLights';
 
-  interval? :  NodeJS.Timer;
 
   constructor() {
 
-    this.interval = setInterval( () => {
-
-      console.log('tick');
-
-      const newResults = [...this.results];
-
-
-      for( let i in newResults ) {
-        newResults[i].value = Math.round( Math.random() * 500);
-      }
-
-      this.results = [...newResults];
-
-    }, 1500);
 
   }
 
-  ngOnDestroy(): void {
-
-    clearInterval(this.interval);
-
-  }
 
   onSelect(event: Event) {
     console.log(event);

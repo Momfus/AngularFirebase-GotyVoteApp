@@ -39,7 +39,6 @@ export class GotyComponent implements OnInit {
         Swal.fire('Oops!', res.msg, 'error')
       }
 
-
     });
 
   }
